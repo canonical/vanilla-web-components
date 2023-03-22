@@ -1,0 +1,21 @@
+// import Vanilla and include base mixins
+// this only needs to happen once in a given project
+@import 'node_modules/vanilla-framework';
+
+@include vf-base;
+
+@include vf-p-accordion;
+
+:host {
+  display: block;
+}
+
+v-accordion-section + v-accordion-section::before {
+  background-color: #d9d9d9;
+  content: '';
+  display: block;
+  height: 1px;
+  left: 0;
+  position: absolute;
+  right: 0;
+}

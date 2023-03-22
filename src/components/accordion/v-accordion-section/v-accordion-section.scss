@@ -1,0 +1,27 @@
+// import Vanilla and include base mixins
+// this only needs to happen once in a given project
+@import 'node_modules/vanilla-framework';
+
+@include vf-base;
+@include vf-p-accordion;
+@include vf-p-headings;
+
+:host {
+  display: block;
+}
+
+// appearing animation
+@keyframes accordion-section-appear {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -0.5rem, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+section {
+  animation: forwards 0.165s cubic-bezier(0.215, 0.61, 0.355, 1) accordion-section-appear;
+}
