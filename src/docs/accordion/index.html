@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+  <script type="module" src="/build/vanilla-web-components.esm.js"></script>
+  <script nomodule src="/build/vanilla-web-components.js"></script>
+  <link rel="stylesheet" href="https://assets.ubuntu.com/v1/vanilla-framework-version-3.12.1.min.css" />
+</head>
+
+<body>
+  <header id="navigation" class="p-navigation is-dark">
+    <div class="l-full-width">
+      <div class="l-start">
+        <div class="p-navigation__banner">
+          <div class="p-navigation__tagged-logo">
+            <a class="p-navigation__link" href="/docs/examples/layouts/full-width/no-sidebar">
+              <div class="p-navigation__logo-tag">
+                <img class="p-navigation__logo-icon" src="https://assets.ubuntu.com/v1/b36b0862-Vanilla_icon_RGB_2022.svg" alt="Vanilla framework">
+              </div>
+              <span class="p-navigation__logo-title">Vanilla</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="l-main">
+        <div class="p-navigation__row u-fixed-width">
+          <nav class="p-navigation__nav" aria-label="Main">
+            <ul class="p-navigation__items">
+              <li class="p-navigation__item is-selected"><a class="p-navigation__link" href="/docs/examples/layouts/full-width/default">Docs</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="l-end">
+        <nav class="p-navigation__nav p-navigation--right" style="width: auto">
+          <ul class="p-navigation__items" style="margin-left: auto">
+            <li class="p-navigation__item"><a class="p-navigation__link" href="/docs">Login</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="p-navigation__search-overlay"></div>
+  </header>
+  <div class="l-full-width__sidebar">
+    <div class="p-side-navigation is-sticky" id="side-navigation-drawer" aria-label="Side">
+      <div class="u-hide--large p-strip--light is-shallow">
+        <div class="u-fixed-width">
+          <button class="p-button has-icon u-no-margin js-drawer-toggle"><i class="p-icon--menu"></i><span>Contents</span></button>
+        </div>
+      </div>
+      <div class="p-side-navigation__overlay js-drawer-toggle" aria-controls="side-navigation-drawer"></div>
+      <nav class="p-side-navigation__drawer" aria-label="Example side">
+        <aside class="p-strip is-shallow">
+          <div class="p-side-navigation__drawer-header">
+            <a href="#" class="p-side-navigation__toggle--in-drawer js-drawer-toggle" aria-controls="drawer"> Toggle side navigation </a>
+          </div>
+          <ul class="p-side-navigation__list">
+            <li class="p-side-navigation__item--title"><span class="p-side-navigation__text">Welcome</span></li>
+            <li class="p-side-navigation__item">
+              <a class="p-side-navigation__link" href="/"> Get started </a>
+            </li>
+            <li class="p-side-navigation__item">
+              <a class="p-side-navigation__link" href="/docs/accordion" aria-current="page"> Accordion </a>
+            </li>
+            </li>
+          </ul>
+        </aside>
+      </nav>
+    </div>
+  </div>
+  <div class="p-strip--light is-shallow l-full-width">
+    <div class="l-main">
+      <div class="row">
+        <main class="col-12" id="main-content">
+          <div class="p-strip u-no-padding--top">
+            <h1>Accordion </h1>
+          </div>
+          <p>The sidebar accordion, used in listing pages or as navigation, can hold multiple navigation items or to be used as a filter for content.</p>
+          <div class="p-notification--information">
+            <p class="p-notification__content">
+              <span class="p-notification__title">Note:</span>
+              <span class="p-notification__message">Clicking on the header toggles the display of accordion tabs. Accordion tabs should contain navigation or supplementary information, not main page content.</span>
+            </p>
+          </div>
+          <h2 id="default">Default</h2>
+            <div class="p-code-snippet">
+              <div class="p-code-snippet__header">
+                <h5 class="p-code-snippet__title">Accordion</h5>
+              </div>
+
+              <pre class="p-code-snippet__block">
+                <code>
+&lt;v-accordion&gt;
+  &lt;v-accordion-section section-title="What is MAAS?"&gt;
+    &lt;p&gt;MAAS expands to “Metal As A Service” – it converts bare-metal servers into cloud instances of virtual machines. There is no need to manage individual units. You can quickly provision or destroy machines, as if they were instances hosted in a public cloud like Amazon AWS, Google GCE, or Microsoft Azure.&lt;/p&gt;
+  &lt;/v-accordion-section&gt;
+  &lt;v-accordion-section section-title="What is MAAS offers"&gt;
+    &lt;p&gt;MAAS can manage a large number of physical machines by merging them into user-defined resource pools. MAAS automatically provisions participating machines and makes them available for use. You can return unused machines to the assigned pool at any time.&lt;/p&gt;
+  &lt;/v-accordion-section&gt;
+  &lt;v-accordion-section section-title="How MAAS works"&gt;
+    &lt;p&gt;When you add a new machine to MAAS, or elect to add a machine that MAAS has enlisted, MAAS commissions it for service and adds it to the pool. At that point, the machine is ready for use. MAAS keeps things simple, marking machines as “New,” “Commissioning,” “Ready,” and so on.&lt;/p&gt;
+  &lt;/v-accordion-section&gt;
+&lt;/v-accordion&gt;
+                </code>
+              </pre>
+          </div>
+
+          <v-accordion>
+            <v-accordion-section section-title="What is MAAS?">
+              <p>MAAS expands to “Metal As A Service” – it converts bare-metal servers into cloud instances of virtual machines. There is no need to manage individual units. You can quickly provision or destroy machines, as if they were instances hosted in a public cloud like Amazon AWS, Google GCE, or Microsoft Azure.</p>
+            </v-accordion-section>
+            <v-accordion-section section-title="What is MAAS offers">
+              <p>MAAS can manage a large number of physical machines by merging them into user-defined resource pools. MAAS automatically provisions participating machines and makes them available for use. You can return unused machines to the assigned pool at any time.</p>
+            </v-accordion-section>
+            <v-accordion-section section-title="How MAAS works">
+              <p>When you add a new machine to MAAS, or elect to add a machine that MAAS has enlisted, MAAS commissions it for service and adds it to the pool. At that point, the machine is ready for use. MAAS keeps things simple, marking machines as “New,” “Commissioning,” “Ready,” and so on.</p>
+            </v-accordion-section>
+          </v-accordion>
+          
+          <h2 id="with-heading-elements">With heading elements</h2>
+            <div class="p-code-snippet">
+              <div class="p-code-snippet__header">
+                <h5 class="p-code-snippet__title">Accordion with heading elements</h5>
+              </div>
+              <pre class="p-code-snippet__block">
+                <code>
+&lt;v-accordion&gt;
+  &lt;v-accordion-section section-title="What is MAAS?" heading-level="2"&gt;
+    &lt;p&gt;MAAS expands to “Metal As A Service” – it converts bare-metal servers into cloud instances of virtual machines. There is no need to manage individual units. You can quickly provision or destroy machines, as if they were instances hosted in a public cloud like Amazon AWS, Google GCE, or Microsoft Azure.&lt;/p&gt;
+  &lt;/v-accordion-section&gt;
+  &lt;v-accordion-section section-title="What is MAAS offers" heading-level="3"&gt;
+    &lt;p&gt;MAAS can manage a large number of physical machines by merging them into user-defined resource pools. MAAS automatically provisions participating machines and makes them available for use. You can return unused machines to the assigned pool at any time.&lt;/p&gt;
+  &lt;/v-accordion-section&gt;
+  &lt;v-accordion-section section-title="How MAAS works" heading-level="5"&gt;
+    &lt;p&gt;When you add a new machine to MAAS, or elect to add a machine that MAAS has enlisted, MAAS commissions it for service and adds it to the pool. At that point, the machine is ready for use. MAAS keeps things simple, marking machines as “New,” “Commissioning,” “Ready,” and so on.&lt;/p&gt;
+  &lt;/v-accordion-section&gt;
+&lt;/v-accordion&gt;
+                </code>
+              </pre>
+          </div>
+
+          <v-accordion>
+            <v-accordion-section section-title="What is MAAS?" heading-level="2">
+              <p>MAAS expands to “Metal As A Service” – it converts bare-metal servers into cloud instances of virtual machines. There is no need to manage individual units. You can quickly provision or destroy machines, as if they were instances hosted in a public cloud like Amazon AWS, Google GCE, or Microsoft Azure.</p>
+            </v-accordion-section>
+            <v-accordion-section section-title="What is MAAS offers" heading-level="3">
+              <p>MAAS can manage a large number of physical machines by merging them into user-defined resource pools. MAAS automatically provisions participating machines and makes them available for use. You can return unused machines to the assigned pool at any time.</p>
+            </v-accordion-section>
+            <v-accordion-section section-title="How MAAS works" heading-level="5">
+              <p>When you add a new machine to MAAS, or elect to add a machine that MAAS has enlisted, MAAS commissions it for service and adds it to the pool. At that point, the machine is ready for use. MAAS keeps things simple, marking machines as “New,” “Commissioning,” “Ready,” and so on.</p>
+            </v-accordion-section>
+          </v-accordion>
+          <h2 id="functionality">Functionality</h2>
+          <p>You don't have anything to worry about! The accordion will work out of the box 🎉</p>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
