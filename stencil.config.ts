@@ -18,6 +18,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      dir: 'www/vanilla-web-components',
       serviceWorker: null, // disable service worke
       copy: [{ src: 'docs' }],
     },
