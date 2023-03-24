@@ -38,13 +38,16 @@ export class VAccordionSection {
   }
 
   private id = `section-${Math.random().toString(36).substr(2, 9)}`;
+  private buttonClasses: string;
+
+  componentWillLoad() {
+    this.buttonClasses = classNames('p-accordion__heading', `p-heading--${this.headingLevel}`);
+  }
 
   componentDidLoad() {
     this.parentId = this.el.parentElement.parentElement.id;
     this.sectionId = `${this.id} - ${this.parentId}`;
   }
-
-  buttonClasses = classNames('p-accordion__heading', `p-heading--${this.headingLevel}`);
 
   render() {
     return (
