@@ -9,5 +9,45 @@
 @include vf-p-icons;
 
 :host {
-  display: block;
+  display: inline-block;
+}
+
+::slotted(i) {
+  margin: 0 $sph--small !important;
+}
+
+::slotted(i:first-child) {
+  margin-left: -$sph--small !important;
+  margin-right: $sph--small !important;
+}
+::slotted(i:last-child) {
+  margin-left: $sph--small !important;
+  margin-right: -$sph--small !important;
+}
+
+// spin animation
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.is-processing {
+  color: transparent;
+  position: relative;
+
+  ::slotted(*) {
+    color: transparent;
+    opacity: 0;
+  }
+
+  .p-icon--spinner {
+    animation: spin 1s linear infinite;
+    left: calc(50% - $sph--small);
+    position: absolute;
+    top: $spv--small;
+  }
 }

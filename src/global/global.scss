@@ -1,0 +1,11 @@
+// import Vanilla and include base mixins
+// this only needs to happen once in a given project
+@import 'node_modules/vanilla-framework';
+
+v-button {
+  margin-right: 1rem;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

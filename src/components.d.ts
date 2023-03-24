@@ -46,11 +46,7 @@ export namespace Components {
          */
         "extraClassNames"?: string;
         /**
-          * Whether the button has an icon in the content.
-         */
-        "hasIcon"?: boolean;
-        /**
-          * Function for handling button click event.
+          * If this is set, the button will be rendered as a <a> tag with the link provided.
          */
         "href"?: string;
         /**
@@ -58,7 +54,11 @@ export namespace Components {
          */
         "inline"?: boolean;
         /**
-          * Function for handling button click event.
+          * Whether the should display a loading spinner.
+         */
+        "isProcessing"?: boolean;
+        /**
+          * Wether the button should be small.
          */
         "small"?: boolean;
     }
@@ -139,11 +139,7 @@ declare namespace LocalJSX {
          */
         "extraClassNames"?: string;
         /**
-          * Whether the button has an icon in the content.
-         */
-        "hasIcon"?: boolean;
-        /**
-          * Function for handling button click event.
+          * If this is set, the button will be rendered as a <a> tag with the link provided.
          */
         "href"?: string;
         /**
@@ -151,7 +147,11 @@ declare namespace LocalJSX {
          */
         "inline"?: boolean;
         /**
-          * Function for handling button click event.
+          * Whether the should display a loading spinner.
+         */
+        "isProcessing"?: boolean;
+        /**
+          * Wether the button should be small.
          */
         "small"?: boolean;
     }

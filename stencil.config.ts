@@ -4,6 +4,7 @@ import { sass } from '@stencil/sass';
 export const config: Config = {
   namespace: 'vanilla-web-components',
   plugins: [sass()],
+  globalStyle: 'src/global/global.scss',
   outputTargets: [
     {
       type: 'dist',

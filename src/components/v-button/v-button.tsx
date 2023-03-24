@@ -33,43 +33,45 @@ export class VButton {
    */
   @Prop() disabled?: boolean;
   /**
-   * Whether the button has an icon in the content.
+   * Whether the should display a loading spinner.
    */
-  @Prop() hasIcon?: boolean;
+  @Prop() isProcessing?: boolean;
   /**
    * Whether the button should display inline.
    */
   @Prop() inline?: boolean;
   /**
-   * Function for handling button click event.
+   * Wether the button should be small.
    */
   @Prop() small?: boolean;
   /**
-   * Function for handling button click event.
+   * If this is set, the button will be rendered as a <a> tag with the link provided.
    */
   @Prop() href?: string;
 
   private classes = classNames(
     this.appearance ? `p-button--${this.appearance}` : 'p-button',
     {
-      'has-icon': this.hasIcon,
       'is-dense': this.dense,
       'is-inline': this.inline,
       'is-small': this.small,
       'is-disabled': this.disabled,
+      'is-processing': this.isProcessing,
     },
     this.extraClassNames,
   );
 
   render() {
     return (
-      <Host style={{ pointerEvents: this.disabled ? 'none' : undefined }}>
+      <Host style={{ pointerEvents: this.disabled || this.isProcessing ? 'none' : undefined }}>
         {this.href ? (
           <a href={this.href} class={this.classes}>
+            {this.isProcessing && <i class="p-icon--spinner u-animation--spin is-light"></i>}
             <slot />
           </a>
         ) : (
           <button disabled={this.disabled} class={this.classes}>
+            {this.isProcessing && <i class="p-icon--spinner u-animation--spin is-light"></i>}
             <slot />
           </button>
         )}
