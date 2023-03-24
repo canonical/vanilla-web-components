@@ -42,7 +42,7 @@ jobs:
       - name: Build production bundle
         uses: borales/actions-yarn@v4
         with:
-          cmd: stencil build --prerender # will run `yarn build` command
+          cmd: build:static # will run `yarn build` command
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

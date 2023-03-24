@@ -1,7 +1,7 @@
 {
   "name": "vanilla-web-components",
   "version": "0.0.1",
-  "description": "Stencil Component Starter",
+  "description": "Vanilla css web components",
   "main": "dist/index.cjs.js",
   "module": "dist/index.js",
   "es2015": "dist/esm/index.mjs",
@@ -20,6 +20,7 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "build:static": "stencil build --prerender && ./prefix-docs-links.sh",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
