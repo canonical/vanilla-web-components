@@ -8,6 +8,8 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AccordionEvent } from "./components/accordion/v-accordion-section/types";
 export { AccordionEvent } from "./components/accordion/v-accordion-section/types";
 export namespace Components {
+    interface CookiePolicy {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -68,6 +70,12 @@ export interface VAccordionSectionCustomEvent<T> extends CustomEvent<T> {
     target: HTMLVAccordionSectionElement;
 }
 declare global {
+    interface HTMLCookiePolicyElement extends Components.CookiePolicy, HTMLStencilElement {
+    }
+    var HTMLCookiePolicyElement: {
+        prototype: HTMLCookiePolicyElement;
+        new (): HTMLCookiePolicyElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -93,6 +101,7 @@ declare global {
         new (): HTMLVButtonElement;
     };
     interface HTMLElementTagNameMap {
+        "cookie-policy": HTMLCookiePolicyElement;
         "my-component": HTMLMyComponentElement;
         "v-accordion": HTMLVAccordionElement;
         "v-accordion-section": HTMLVAccordionSectionElement;
@@ -100,6 +109,8 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface CookiePolicy {
+    }
     interface MyComponent {
         /**
           * The first name
@@ -156,6 +167,7 @@ declare namespace LocalJSX {
         "small"?: boolean;
     }
     interface IntrinsicElements {
+        "cookie-policy": CookiePolicy;
         "my-component": MyComponent;
         "v-accordion": VAccordion;
         "v-accordion-section": VAccordionSection;
@@ -166,6 +178,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cookie-policy": LocalJSX.CookiePolicy & JSXBase.HTMLAttributes<HTMLCookiePolicyElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "v-accordion": LocalJSX.VAccordion & JSXBase.HTMLAttributes<HTMLVAccordionElement>;
             "v-accordion-section": LocalJSX.VAccordionSection & JSXBase.HTMLAttributes<HTMLVAccordionSectionElement>;

@@ -18,7 +18,6 @@ export const config: Config = {
     },
     {
       type: 'www',
-      baseUrl: 'https://canonical.github.io/vanilla-web-components/',
       serviceWorker: null, // disable service worke
       copy: [{ src: 'docs' }],
     },

@@ -19,6 +19,19 @@
 | `small`           | `small`             | Wether the button should be small.                                               | `boolean`                                                       | `undefined` |
 
 
+## Dependencies
+
+### Used by
+
+ - [cookie-policy](../cookie-policy)
+
+### Graph
+```mermaid
+graph TD;
+  cookie-policy --> v-button
+  style v-button fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 *Built with [StencilJS](https://stenciljs.com/)*
