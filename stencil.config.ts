@@ -18,6 +18,7 @@ export const config: Config = {
     },
     {
       type: 'www',
+      baseUrl: 'https://canonical.github.io/vanilla-web-components/', // this breaks local dev but is needed for gh-pages 🤷 TODO: fix
       serviceWorker: null, // disable service worke
       copy: [{ src: 'docs' }],
     },
