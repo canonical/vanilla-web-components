@@ -26,7 +26,6 @@ export class CookiePolicy {
     }
 
     const language = document.documentElement.lang;
-    console.log(language);
 
     if (content[language]) {
       this.lang = language;
@@ -44,8 +43,6 @@ export class CookiePolicy {
   private handleToggleSettings = (event: Event) => {
     const target = event.target as HTMLInputElement;
     this.settingsToggled[target.id] = target.checked;
-
-    console.log(this.settingsToggled);
   };
 
   private handleManageClick = () => {
