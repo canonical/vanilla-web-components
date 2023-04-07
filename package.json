@@ -16,7 +16,8 @@
   },
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "react-components/"
   ],
   "scripts": {
     "build": "stencil build --docs",
