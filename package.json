@@ -32,6 +32,7 @@
     "vanilla-framework": "^3.12.1"
   },
   "devDependencies": {
+    "@stencil/react-output-target": "^0.5.0",
     "@stencil/sass": "^3.0.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.11",

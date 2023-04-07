@@ -1,5 +1,6 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'vanilla-web-components',
@@ -10,6 +11,10 @@ export const config: Config = {
       type: 'dist',
       esmLoaderPath: '../loader',
     },
+    reactOutputTarget({
+      componentCorePackage: 'vanilla-web-components',
+      proxiesFile: './react-components/index.ts',
+    }),
     {
       type: 'dist-custom-elements',
     },
