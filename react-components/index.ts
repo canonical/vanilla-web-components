@@ -3,7 +3,7 @@
 /* auto-generated react proxies */
 import { createReactComponent } from './react-component-lib';
 
-import type { JSX } from 'vanilla-web-components';
+import type { JSX } from '@canonical/vanilla-web-components';
 
 
 

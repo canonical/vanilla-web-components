@@ -12,7 +12,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     reactOutputTarget({
-      componentCorePackage: 'vanilla-web-components',
+      componentCorePackage: '@canonical/vanilla-web-components',
       proxiesFile: './react-components/index.ts',
     }),
     {
