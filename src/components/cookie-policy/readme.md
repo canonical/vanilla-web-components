@@ -15,6 +15,7 @@
 ```mermaid
 graph TD;
   cookie-policy --> v-button
+  v-button --> v-icon
   style cookie-policy fill:#f9f,stroke:#333,stroke-width:4px
 ```
 

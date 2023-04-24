@@ -6,7 +6,9 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { AccordionEvent } from "./components/accordion/v-accordion-section/types";
+import { Icon } from "./components/v-icon/type";
 export { AccordionEvent } from "./components/accordion/v-accordion-section/types";
+export { Icon } from "./components/v-icon/type";
 export namespace Components {
     interface CookiePolicy {
     }
@@ -34,7 +36,7 @@ export namespace Components {
         /**
           * The appearance of the button.
          */
-        "appearance"?: typeof this.ButtonAppearance[keyof typeof this.ButtonAppearance];
+        "appearance"?: (typeof this.ButtonAppearance)[keyof typeof this.ButtonAppearance];
         /**
           * Whether the button should have dense padding.
          */
@@ -60,9 +62,31 @@ export namespace Components {
          */
         "isProcessing"?: boolean;
         /**
+          * If this is set, the button will be rendered as a <a> tag with the link provided.
+         */
+        "prefixIcon"?: Icon;
+        /**
           * Wether the button should be small.
          */
         "small"?: boolean;
+        /**
+          * If this is set, the button will be rendered as a <a> tag with the link provided.
+         */
+        "suffixIcon"?: Icon;
+    }
+    interface VIcon {
+        /**
+          * The name of the icon to display.
+         */
+        "icon": Icon;
+        /**
+          * The name of the icon to display.
+         */
+        "isLight"?: boolean;
+        /**
+          * The name of the icon to display.
+         */
+        "isRotating"?: boolean;
     }
 }
 export interface VAccordionSectionCustomEvent<T> extends CustomEvent<T> {
@@ -100,12 +124,19 @@ declare global {
         prototype: HTMLVButtonElement;
         new (): HTMLVButtonElement;
     };
+    interface HTMLVIconElement extends Components.VIcon, HTMLStencilElement {
+    }
+    var HTMLVIconElement: {
+        prototype: HTMLVIconElement;
+        new (): HTMLVIconElement;
+    };
     interface HTMLElementTagNameMap {
         "cookie-policy": HTMLCookiePolicyElement;
         "my-component": HTMLMyComponentElement;
         "v-accordion": HTMLVAccordionElement;
         "v-accordion-section": HTMLVAccordionSectionElement;
         "v-button": HTMLVButtonElement;
+        "v-icon": HTMLVIconElement;
     }
 }
 declare namespace LocalJSX {
@@ -136,7 +167,7 @@ declare namespace LocalJSX {
         /**
           * The appearance of the button.
          */
-        "appearance"?: typeof this.ButtonAppearance[keyof typeof this.ButtonAppearance];
+        "appearance"?: (typeof this.ButtonAppearance)[keyof typeof this.ButtonAppearance];
         /**
           * Whether the button should have dense padding.
          */
@@ -162,9 +193,31 @@ declare namespace LocalJSX {
          */
         "isProcessing"?: boolean;
         /**
+          * If this is set, the button will be rendered as a <a> tag with the link provided.
+         */
+        "prefixIcon"?: Icon;
+        /**
           * Wether the button should be small.
          */
         "small"?: boolean;
+        /**
+          * If this is set, the button will be rendered as a <a> tag with the link provided.
+         */
+        "suffixIcon"?: Icon;
+    }
+    interface VIcon {
+        /**
+          * The name of the icon to display.
+         */
+        "icon"?: Icon;
+        /**
+          * The name of the icon to display.
+         */
+        "isLight"?: boolean;
+        /**
+          * The name of the icon to display.
+         */
+        "isRotating"?: boolean;
     }
     interface IntrinsicElements {
         "cookie-policy": CookiePolicy;
@@ -172,6 +225,7 @@ declare namespace LocalJSX {
         "v-accordion": VAccordion;
         "v-accordion-section": VAccordionSection;
         "v-button": VButton;
+        "v-icon": VIcon;
     }
 }
 export { LocalJSX as JSX };
@@ -183,6 +237,7 @@ declare module "@stencil/core" {
             "v-accordion": LocalJSX.VAccordion & JSXBase.HTMLAttributes<HTMLVAccordionElement>;
             "v-accordion-section": LocalJSX.VAccordionSection & JSXBase.HTMLAttributes<HTMLVAccordionSectionElement>;
             "v-button": LocalJSX.VButton & JSXBase.HTMLAttributes<HTMLVButtonElement>;
+            "v-icon": LocalJSX.VIcon & JSXBase.HTMLAttributes<HTMLVIconElement>;
         }
     }
 }

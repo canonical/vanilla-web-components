@@ -71,10 +71,10 @@
               <a class="p-side-navigation__link" href="/docs/buttons"> Buttons </a>
             </li>
             <li class="p-side-navigation__item">
-              <a class="p-side-navigation__link" href="/docs/cookie-policy" aria-current="page"> Cookie policy </a>
+              <a class="p-side-navigation__link" href="/docs/cookie-policy"> Cookie policy </a>
             </li>
             <li class="p-side-navigation__item">
-              <a class="p-side-navigation__link" href="/docs/icons"> Icons </a>
+              <a class="p-side-navigation__link" href="/docs/icons"  aria-current="page"> Icons </a>
             </li>
             </li>
           </ul>
@@ -87,65 +87,70 @@
       <div class="row">
         <main class="col-12" id="main-content">
           <div class="p-strip u-no-padding--top">
-            <h1>Cookie policy</h1>
+            <h1>Icons</h1>
           </div>
-          <p>Here's your one stop shop for cookie policy compliance.</p>
-          <p>It is a reimplementation of <a href="https://github.com/canonical/cookie-policy">this one</a> as a self contained web component.</p>
+          <p>Icons provide visual context and enhance usability.</p>
           <h2>Usage</h2>
           <p>To use it, simply add it to your markup like so:</p>
             <div class="p-code-snippet">
               <div class="p-code-snippet__header">
-                <h5 class="p-code-snippet__title">Cookie policy</h5>
+                <h5 class="p-code-snippet__title">Icons</h5>
               </div>
               <pre class="p-code-snippet__block">
                 <code>
-&lt;cookie-policy&gt;&lt;/cookie-policy&gt;
+&lt;v-icon icon="plus"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="minus"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="expand"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="collapse"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="spinner" is-rotating&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="chevron-down"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="chevron-up"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="close"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="help"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="information"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="delete"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="external-link"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="drag"&gt;&lt;/v-icon&gt;                 
+&lt;v-icon icon="menu"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="code"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="copy"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="search"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="share"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="user"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="error"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="success"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="warning"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="anchor"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="show"&gt;&lt;/v-icon&gt;
+&lt;v-icon icon="hide"&gt;&lt;/v-icon&gt;
                 </code>
               </pre>
           </div>
-          <cookie-policy></cookie-policy>
-      
-          <h2>Revoking the cookie policy</h2>
-          <p>To revoke the cookie policy, dispatch a <code>revokeCookies</code> event:</p>
-            <div class="p-code-snippet">
-              <div class="p-code-snippet__header">
-                <h5 class="p-code-snippet__title">Revoking cookies</h5>
-              </div>
-              <pre class="p-code-snippet__block">
-                <code>
-&lt;v-button id="revoke-button" appearance="negative"&gt;Revoke cookies&lt;/v-button&gt;
-&lt;script&gt;
-  const revokeCookies = new Event("revokeCookies");
-
-  function revoke() {
-    document.dispatchEvent(revokeCookies);
-  }
-
-  document.getElementById("revoke-button").addEventListener("click", revoke);
-&lt;/script&gt;
-                </code>
-              </pre>
-          </div>
-          <p>
-            <v-button id="revoke-button" appearance="negative">Revoke cookies</v-button>
-          </p>
-          <script>
-            const revokeCookies = new Event("revokeCookies");
-
-            function revoke() {
-              document.dispatchEvent(revokeCookies);
-            }
-
-            document.getElementById("revoke-button").addEventListener("click", revoke);
-          </script>
-          
-          <h2>Visiting a page with tracker disabled</h2>
-          <p>If you add the query <code>?cp=hide</code> to any URL the cookie policy will not be rendered. The main use case is to visit the policy page without the modal blocking the content.</p>
-          
-          <h2>Adaptative language</h2>
-          <p>The cookie policy modal will adapt based on the <code>lang</code> attribute of the <code>&lt;html&gt;</code> tag</p>
-          <p>Currently supported languages are English, Chinese and Japanese.</p>
-
+          <v-icon icon="plus"></v-icon>
+          <v-icon icon="minus"></v-icon>
+          <v-icon icon="expand"></v-icon>
+          <v-icon icon="collapse"></v-icon>
+          <v-icon icon="spinner" is-rotating></v-icon>
+          <v-icon icon="chevron-down"></v-icon>
+          <v-icon icon="chevron-up"></v-icon>
+          <v-icon icon="close"></v-icon>
+          <v-icon icon="help"></v-icon>
+          <v-icon icon="information"></v-icon>
+          <v-icon icon="delete"></v-icon>
+          <v-icon icon="external-link"></v-icon>
+          <v-icon icon="drag"></v-icon>
+          <v-icon icon="menu"></v-icon>
+          <v-icon icon="code"></v-icon>
+          <v-icon icon="copy"></v-icon>
+          <v-icon icon="search"></v-icon>
+          <v-icon icon="share"></v-icon>
+          <v-icon icon="user"></v-icon>
+          <v-icon icon="error"></v-icon>
+          <v-icon icon="success"></v-icon>
+          <v-icon icon="warning"></v-icon>
+          <v-icon icon="anchor"></v-icon>
+          <v-icon icon="show"></v-icon>
+          <v-icon icon="hide"></v-icon>
         </main>
       </div>
     </div>

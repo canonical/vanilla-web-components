@@ -1,5 +1,6 @@
 import { Component, h, Host, Prop } from '@stencil/core';
 import classNames from 'classnames';
+import { Icon } from '../v-icon/type';
 
 @Component({
   tag: 'v-button',
@@ -11,15 +12,24 @@ export class VButton {
     BASE: 'base',
     BRAND: 'brand',
     DEFAULT: '',
-    LINK: 'link',
     NEGATIVE: 'negative',
     POSITIVE: 'positive',
   } as const;
 
+  private iconLightnessMap = {
+    [this.ButtonAppearance.BASE]: false,
+    [this.ButtonAppearance.BRAND]: true,
+    [this.ButtonAppearance.DEFAULT]: false,
+    [this.ButtonAppearance.POSITIVE]: true,
+    [this.ButtonAppearance.NEGATIVE]: true,
+  };
+
+  private isIconLight = false;
+
   /**
    * The appearance of the button.
    */
-  @Prop() appearance?: typeof this.ButtonAppearance[keyof typeof this.ButtonAppearance];
+  @Prop() appearance?: (typeof this.ButtonAppearance)[keyof typeof this.ButtonAppearance];
   /**
    * Optional class(es) to pass to the button element.
    */
@@ -48,6 +58,18 @@ export class VButton {
    * If this is set, the button will be rendered as a <a> tag with the link provided.
    */
   @Prop() href?: string;
+  /**
+   * If this is set, the button will be rendered as a <a> tag with the link provided.
+   */
+  @Prop() prefixIcon?: Icon;
+  /**
+   * If this is set, the button will be rendered as a <a> tag with the link provided.
+   */
+  @Prop() suffixIcon?: Icon;
+
+  componentWillRender() {
+    this.isIconLight = this.iconLightnessMap[this.appearance ?? this.ButtonAppearance.DEFAULT];
+  }
 
   private classes = classNames(
     this.appearance ? `p-button--${this.appearance}` : 'p-button',
@@ -66,13 +88,17 @@ export class VButton {
       <Host style={{ pointerEvents: this.disabled || this.isProcessing ? 'none' : undefined }}>
         {this.href ? (
           <a href={this.href} class={this.classes}>
-            {this.isProcessing && <i class="p-icon--spinner u-animation--spin is-light"></i>}
+            <v-icon icon={this.prefixIcon} is-light={this.isIconLight}></v-icon>
+            {this.isProcessing && <v-icon icon="spinner" is-rotating is-light={this.isIconLight}></v-icon>}
             <slot />
+            <v-icon icon={this.suffixIcon} is-light={this.isIconLight}></v-icon>
           </a>
         ) : (
           <button disabled={this.disabled} class={this.classes}>
-            {this.isProcessing && <i class="p-icon--spinner u-animation--spin is-light"></i>}
+            <v-icon icon={this.prefixIcon} is-light={this.isIconLight}></v-icon>
+            {this.isProcessing && <v-icon icon="spinner" is-rotating is-light={this.isIconLight}></v-icon>}
             <slot />
+            <v-icon icon={this.suffixIcon} is-light={this.isIconLight}></v-icon>
           </button>
         )}
       </Host>

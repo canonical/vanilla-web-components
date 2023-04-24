@@ -5,24 +5,17 @@
 
 @include vf-p-buttons;
 
-// when using icons within buttons you need to include icons as well
-@include vf-p-icons;
-
 :host {
   display: inline-block;
 }
 
-::slotted(i) {
-  margin: 0 $sph--small !important;
+v-icon:first-child {
+  margin-left: -$sph--small;
+  margin-right: $sph--small;
 }
-
-::slotted(i:first-child) {
-  margin-left: -$sph--small !important;
-  margin-right: $sph--small !important;
-}
-::slotted(i:last-child) {
-  margin-left: $sph--small !important;
-  margin-right: -$sph--small !important;
+v-icon:last-child {
+  margin-left: $sph--small;
+  margin-right: -$sph--small;
 }
 
 button {
@@ -48,10 +41,9 @@ button {
     opacity: 0;
   }
 
-  .p-icon--spinner {
-    animation: spin 1s linear infinite;
+  v-icon {
     left: calc(50% - $sph--small);
+    margin: 0;
     position: absolute;
-    top: $spv--small;
   }
 }
