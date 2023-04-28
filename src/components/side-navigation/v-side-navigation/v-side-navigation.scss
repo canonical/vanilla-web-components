@@ -1,0 +1,19 @@
+// import Vanilla and include base mixins
+// this only needs to happen once in a given project
+@import 'node_modules/vanilla-framework';
+
+// Include all of Vanilla Framework
+@include vanilla;
+@include vf-p-side-navigation;
+
+:host {
+  display: block;
+}
+
+.p-side-navigation__drawer {
+  background: transparent !important;
+}
+
+.is-drawer-expanded .p-side-navigation__drawer {
+  background: white !important;
+}

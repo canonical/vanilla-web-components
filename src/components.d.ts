@@ -62,7 +62,7 @@ export namespace Components {
          */
         "isProcessing"?: boolean;
         /**
-          * If this is set, the button will be rendered as a <a> tag with the link provided.
+          * Icon to be displayed before the button text.
          */
         "prefixIcon"?: Icon;
         /**
@@ -70,7 +70,7 @@ export namespace Components {
          */
         "small"?: boolean;
         /**
-          * If this is set, the button will be rendered as a <a> tag with the link provided.
+          * Icon to be displayed after the button text.
          */
         "suffixIcon"?: Icon;
     }
@@ -87,6 +87,15 @@ export namespace Components {
           * The name of the icon to display.
          */
         "isRotating"?: boolean;
+    }
+    interface VSideNavigation {
+    }
+    interface VSideNavigationItem {
+        "itemTitle": string;
+        "link": string;
+    }
+    interface VSideNavigationSection {
+        "sectionTitle": string;
     }
 }
 export interface VAccordionSectionCustomEvent<T> extends CustomEvent<T> {
@@ -130,6 +139,24 @@ declare global {
         prototype: HTMLVIconElement;
         new (): HTMLVIconElement;
     };
+    interface HTMLVSideNavigationElement extends Components.VSideNavigation, HTMLStencilElement {
+    }
+    var HTMLVSideNavigationElement: {
+        prototype: HTMLVSideNavigationElement;
+        new (): HTMLVSideNavigationElement;
+    };
+    interface HTMLVSideNavigationItemElement extends Components.VSideNavigationItem, HTMLStencilElement {
+    }
+    var HTMLVSideNavigationItemElement: {
+        prototype: HTMLVSideNavigationItemElement;
+        new (): HTMLVSideNavigationItemElement;
+    };
+    interface HTMLVSideNavigationSectionElement extends Components.VSideNavigationSection, HTMLStencilElement {
+    }
+    var HTMLVSideNavigationSectionElement: {
+        prototype: HTMLVSideNavigationSectionElement;
+        new (): HTMLVSideNavigationSectionElement;
+    };
     interface HTMLElementTagNameMap {
         "cookie-policy": HTMLCookiePolicyElement;
         "my-component": HTMLMyComponentElement;
@@ -137,6 +164,9 @@ declare global {
         "v-accordion-section": HTMLVAccordionSectionElement;
         "v-button": HTMLVButtonElement;
         "v-icon": HTMLVIconElement;
+        "v-side-navigation": HTMLVSideNavigationElement;
+        "v-side-navigation-item": HTMLVSideNavigationItemElement;
+        "v-side-navigation-section": HTMLVSideNavigationSectionElement;
     }
 }
 declare namespace LocalJSX {
@@ -193,7 +223,7 @@ declare namespace LocalJSX {
          */
         "isProcessing"?: boolean;
         /**
-          * If this is set, the button will be rendered as a <a> tag with the link provided.
+          * Icon to be displayed before the button text.
          */
         "prefixIcon"?: Icon;
         /**
@@ -201,7 +231,7 @@ declare namespace LocalJSX {
          */
         "small"?: boolean;
         /**
-          * If this is set, the button will be rendered as a <a> tag with the link provided.
+          * Icon to be displayed after the button text.
          */
         "suffixIcon"?: Icon;
     }
@@ -219,6 +249,15 @@ declare namespace LocalJSX {
          */
         "isRotating"?: boolean;
     }
+    interface VSideNavigation {
+    }
+    interface VSideNavigationItem {
+        "itemTitle"?: string;
+        "link"?: string;
+    }
+    interface VSideNavigationSection {
+        "sectionTitle"?: string;
+    }
     interface IntrinsicElements {
         "cookie-policy": CookiePolicy;
         "my-component": MyComponent;
@@ -226,6 +265,9 @@ declare namespace LocalJSX {
         "v-accordion-section": VAccordionSection;
         "v-button": VButton;
         "v-icon": VIcon;
+        "v-side-navigation": VSideNavigation;
+        "v-side-navigation-item": VSideNavigationItem;
+        "v-side-navigation-section": VSideNavigationSection;
     }
 }
 export { LocalJSX as JSX };
@@ -238,6 +280,9 @@ declare module "@stencil/core" {
             "v-accordion-section": LocalJSX.VAccordionSection & JSXBase.HTMLAttributes<HTMLVAccordionSectionElement>;
             "v-button": LocalJSX.VButton & JSXBase.HTMLAttributes<HTMLVButtonElement>;
             "v-icon": LocalJSX.VIcon & JSXBase.HTMLAttributes<HTMLVIconElement>;
+            "v-side-navigation": LocalJSX.VSideNavigation & JSXBase.HTMLAttributes<HTMLVSideNavigationElement>;
+            "v-side-navigation-item": LocalJSX.VSideNavigationItem & JSXBase.HTMLAttributes<HTMLVSideNavigationItemElement>;
+            "v-side-navigation-section": LocalJSX.VSideNavigationSection & JSXBase.HTMLAttributes<HTMLVSideNavigationSectionElement>;
         }
     }
 }

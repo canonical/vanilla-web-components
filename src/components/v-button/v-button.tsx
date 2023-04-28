@@ -59,11 +59,11 @@ export class VButton {
    */
   @Prop() href?: string;
   /**
-   * If this is set, the button will be rendered as a <a> tag with the link provided.
+   * Icon to be displayed before the button text.
    */
   @Prop() prefixIcon?: Icon;
   /**
-   * If this is set, the button will be rendered as a <a> tag with the link provided.
+   * Icon to be displayed after the button text.
    */
   @Prop() suffixIcon?: Icon;
 

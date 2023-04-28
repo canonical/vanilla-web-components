@@ -1,0 +1,43 @@
+// import Vanilla and include base mixins
+// this only needs to happen once in a given project
+@import 'node_modules/vanilla-framework';
+
+// Include all of Vanilla Framework
+@include vanilla;
+@include vf-p-side-navigation;
+
+:host {
+  display: block;
+
+  &:hover {
+    background: #f2f2f2;
+  }
+}
+
+a.p-side-navigation__link,
+a.p-side-navigation__link:visited {
+  color: rgba(0, 0, 0, 0.75) !important;
+  cursor: pointer;
+
+  &:hover {
+    background: #f2f2f2;
+    color: #111;
+  }
+
+  &[aria-current='page'] {
+    background: #ebebeb;
+    color: #111;
+    cursor: default;
+
+    &::before {
+      background-color: #111;
+      bottom: 0;
+      content: '';
+      height: 2rem;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 0.1875rem;
+    }
+  }
+}
