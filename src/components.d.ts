@@ -88,6 +88,10 @@ export namespace Components {
          */
         "isRotating"?: boolean;
     }
+    interface VNotification {
+        "notificationTitle": string;
+        "severity"?: (typeof this.Notificationseverity)[keyof typeof this.Notificationseverity];
+    }
     interface VSideNavigation {
     }
     interface VSideNavigationItem {
@@ -139,6 +143,12 @@ declare global {
         prototype: HTMLVIconElement;
         new (): HTMLVIconElement;
     };
+    interface HTMLVNotificationElement extends Components.VNotification, HTMLStencilElement {
+    }
+    var HTMLVNotificationElement: {
+        prototype: HTMLVNotificationElement;
+        new (): HTMLVNotificationElement;
+    };
     interface HTMLVSideNavigationElement extends Components.VSideNavigation, HTMLStencilElement {
     }
     var HTMLVSideNavigationElement: {
@@ -164,6 +174,7 @@ declare global {
         "v-accordion-section": HTMLVAccordionSectionElement;
         "v-button": HTMLVButtonElement;
         "v-icon": HTMLVIconElement;
+        "v-notification": HTMLVNotificationElement;
         "v-side-navigation": HTMLVSideNavigationElement;
         "v-side-navigation-item": HTMLVSideNavigationItemElement;
         "v-side-navigation-section": HTMLVSideNavigationSectionElement;
@@ -249,6 +260,10 @@ declare namespace LocalJSX {
          */
         "isRotating"?: boolean;
     }
+    interface VNotification {
+        "notificationTitle"?: string;
+        "severity"?: (typeof this.Notificationseverity)[keyof typeof this.Notificationseverity];
+    }
     interface VSideNavigation {
     }
     interface VSideNavigationItem {
@@ -265,6 +280,7 @@ declare namespace LocalJSX {
         "v-accordion-section": VAccordionSection;
         "v-button": VButton;
         "v-icon": VIcon;
+        "v-notification": VNotification;
         "v-side-navigation": VSideNavigation;
         "v-side-navigation-item": VSideNavigationItem;
         "v-side-navigation-section": VSideNavigationSection;
@@ -280,6 +296,7 @@ declare module "@stencil/core" {
             "v-accordion-section": LocalJSX.VAccordionSection & JSXBase.HTMLAttributes<HTMLVAccordionSectionElement>;
             "v-button": LocalJSX.VButton & JSXBase.HTMLAttributes<HTMLVButtonElement>;
             "v-icon": LocalJSX.VIcon & JSXBase.HTMLAttributes<HTMLVIconElement>;
+            "v-notification": LocalJSX.VNotification & JSXBase.HTMLAttributes<HTMLVNotificationElement>;
             "v-side-navigation": LocalJSX.VSideNavigation & JSXBase.HTMLAttributes<HTMLVSideNavigationElement>;
             "v-side-navigation-item": LocalJSX.VSideNavigationItem & JSXBase.HTMLAttributes<HTMLVSideNavigationItemElement>;
             "v-side-navigation-section": LocalJSX.VSideNavigationSection & JSXBase.HTMLAttributes<HTMLVSideNavigationSectionElement>;

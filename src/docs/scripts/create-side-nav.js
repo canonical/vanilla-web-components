@@ -4,6 +4,7 @@ const pages = [
   { title: 'Buttons', link: '/docs/buttons' },
   { title: 'Icons', link: '/docs/icons' },
   { title: 'Cookie policy', link: '/docs/cookie-policy' },
+  { title: 'Notification', link: '/docs/notification' },
 ];
 
 const sidebar = document.querySelector('.l-full-width__sidebar');

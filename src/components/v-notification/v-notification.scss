@@ -1,0 +1,10 @@
+// import Vanilla and include base mixins
+// this only needs to happen once in a given project
+@import 'node_modules/vanilla-framework';
+@include vf-base;
+
+@include vf-p-notification;
+
+:host {
+  display: block;
+}
