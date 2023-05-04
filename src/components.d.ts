@@ -89,6 +89,7 @@ export namespace Components {
         "isRotating"?: boolean;
     }
     interface VNotification {
+        "dismissible"?: boolean;
         "notificationTitle": string;
         "severity"?: (typeof this.Notificationseverity)[keyof typeof this.Notificationseverity];
     }
@@ -261,6 +262,7 @@ declare namespace LocalJSX {
         "isRotating"?: boolean;
     }
     interface VNotification {
+        "dismissible"?: boolean;
         "notificationTitle"?: string;
         "severity"?: (typeof this.Notificationseverity)[keyof typeof this.Notificationseverity];
     }

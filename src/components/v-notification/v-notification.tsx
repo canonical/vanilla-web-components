@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop } from '@stencil/core';
+import { Component, Host, h, Prop, State } from '@stencil/core';
 import classNames from 'classnames';
 
 @Component({
@@ -16,14 +16,21 @@ export class VNotification {
   } as const;
 
   @Prop() severity?: (typeof this.Notificationseverity)[keyof typeof this.Notificationseverity];
- 
+  @Prop() dismissible?: boolean;
+  @Prop() notificationTitle: string;
+
+  @State() isDismiss:boolean = false;
+
   private classes = classNames(
     this.severity ? `p-notification--${this.severity}` : 'p-notification--infomration',
   );
 
-  @Prop() notificationTitle: string;
+  handleClick() {
+    this.isDismiss= !this.isDismiss
+  }
 
   render() {
+    if (this.isDismiss) return null;
     return (
       <Host>
         <div class={this.classes}>
@@ -34,10 +41,10 @@ export class VNotification {
             <p class="p-notification__message">
               <slot />
             </p>
+            {this.dismissible && <button class="p-notification__close" data-testid="notification-close-button" onClick={this.handleClick.bind(this)} />}
           </div>
         </div>
       </Host>
     );
   }
-
 }
